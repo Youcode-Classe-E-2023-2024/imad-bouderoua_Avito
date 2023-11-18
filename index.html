@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 10px;
+        }
+
+        label, input {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        input[type="file"] {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+       
+        <form action="operation.php" method="post">
+            <input name="idd" type="text" placeholder="Enter ID">
+            <input type="submit" name="delete" value="Delete">
+        </form>
+        
+        <div class="products">
+            <!-- Product items will be dynamically added here -->
+        </div>
+    </div>
+    <div>
+        <h3>edit</h3>
+        <form style="border: 2px solid black;" action="operation.php" method="post" enctype="multipart/form-data">
+            <label for="name">ID</label>
+            <input type="text" name="id" placeholder="Enter ID">
+            <label for="name">New Product Name</label>
+            <input type="text" name="namee" id="name">
+            <label for="price">New Product Price</label>
+            <input type="text" name="pricee" id="price">
+            <label for="desc">New Product Description</label>
+            <input type="text" name="desce" id="desc">
+            <input type="submit" name="Edit" value="Edit Product">
+        </form>
+    </div>
+    <div style="" >
+        <h3>add</h3>
+        <form style="border: 2px solid black;" action="operation.php" method="post" enctype="multipart/form-data">
+            <label for="name">Product Name</label>
+            <input type="text" name="name" id="name">
+            <label for="price">Product Price</label>
+            <input type="text" name="price" id="price">
+            <label for="desc">Product Description</label>
+            <input type="text" name="desc" id="desc">
+            <label for="photo">Product Photo</label>
+            <input type="file" name="photo" id="photo">
+            <input type="submit" name="add" value="Add Product">
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
